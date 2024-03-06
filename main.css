@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.split {
+    height: 100%;
+    width: 58%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+
+  .left {
+    left: 0;
+ }
+  
+
+  .right {
+    right: 0;
+    width: auto;
+  }
+  
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  .slider-div-Img1 {
+    position: relative;
+    width: 500%;
+    height: 100vh;
+    margin: 0;
+    left: 0;
+    animation: 10s img-div-Img1 infinite;
+    overflow: hidden;
+}
+.img-slide-Img1 {
+    width: 20%;
+    height: 100vh;
+    float: left;
+}
+.img-div-Img1{
+    overflow: hidden;
+  }
+  .slider-div-Img1{
+    position: relative;
+    width: 500%;
+    height: 100vh;
+    margin: 0;
+    left: 0;
+    animation: 10s img-div-Img1 infinite;
+  }
+  .img-slide-Img1{
+    width: 20%;
+    height: 100vh;
+    float: left;
+  }
+  @keyframes img-div-Img1{
+    0%{
+        left:0%
+    }
+    20%{
+        left:0%
+    }
+    25%{
+        left:0%
+    }
+    45%{
+        left:-100%
+    }
+    50%{
+        left:-100%
+    }
+     60%{
+        left:-100%
+    }
+    80%{
+        left:-200%
+    }
+    95%{
+        left:-200%
+    }
+    100%{
+        left:-200%
+    }
+  }
+  .header{
+    height: 18%;
+    display: flex;
+    /* place-items: center; */
+    justify-content: center;
+    align-items: flex-end;
+   
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    display: flex;
+     /* align-items: center;
+     justify-content: center; */
+     width: 90%;
+     padding-left: 20%;
+     margin: 0;
+
+    
+   
+}
+
+.login-form {
+
+    padding: 30px;
+    
+}
+
+h2 {
+  padding-bottom: 20px;
+
+
+}
+.Welcome{
+    padding: 5px 0px 5px 0px;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+p{
+    flex-wrap: wrap;
+    padding: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border:none;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #21446f;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: none;
+}
+#id{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    width: auto;
+    height: auto;
+}
+.right-img{
+    width: 20px;
+    height: auto;
+}
+#right-img{
+    display: flex;
+    align-items: end;
+    
+}
+
+/* .footer-left-img {
+    position: absolute;
+    top: 25;
+    left: 0;
+    padding-right: 30px;
+    padding-top: 150px;
+    padding-left: 30px;
+} */
+
+.right-img{
+    display: flex;
+    align-items: end;
+    padding-left: 200px;
+    padding-top: 180px;
+    margin-left: 0;
+    margin: 0;
+}
+.para{
+   display: flex;
+   padding-bottom: 200px;
+   align-items: center;
+   justify-content: center;
+   padding:1px;
+   padding-left: 20%;
+}
+
+
+h6 {
+    display: block;
+    margin: 0; }
+
+.smart {
+    color: rgb(18, 52, 77);
+    font-size: 12px;
+    margin-top: 500px;}
+
+.footer {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+
+.footer h6 {
+    margin: 0; 
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-left-img {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    /* padding-right: 205px; */
+    padding-bottom: 10px;
+    display: flex;
+    padding-left: 15%;
+}
+
+.right-img {
+    padding-left: 30px;
+}
+
+.para {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding-bottom: 100px;
+}
+
+.smart {
+    font-size: 12px;
+    color: rgb(18, 52, 77);
+    margin-bottom: 10px; 
+    padding-left: 80px;
+    padding-bottom: 5px;
+}
+.data{
+    font-size: 12px;
+    color: rgb(18, 52, 77);
+    margin-bottom: 50px; 
+}
+.right-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 100px;
+    padding-bottom: 10px; 
+}
+@media only screen and (max-width: 600px) {
+    .slider-div-Img1 {
+      display: none;
+      overflow: hidden;
+    }
+  }
+  

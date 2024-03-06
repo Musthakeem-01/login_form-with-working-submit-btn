@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="m-0 p-0 font-sans">
+    <div class="main">
+      <div class="rounded bg-[#DBEAFD] w-full p-6 mb-6">
+        <div class="hero-section block my-10 flex justify-between">
+          <div class="hero-txt">
+            <h3 class="font-sans text-2xl font-black">
+              Welcome! to our product page!
+            </h3>
+          </div>
+          <div class="seach_btn">
+            <input
+              type="text"
+              id="myInput"
+              placeholder="Search........"
+              class="bg-white border border-gray-300 text-slate-900 text-xs rounded-lg focus:outline-none focus:ring-pink-600 ring-2 focus:border-pink-500 block w-2/3 pl-10 p-2"
+            />
+          </div>
+        </div>
+
+        <table class="border border-gray-300">
+          <thead
+            id="t-head"
+            class="bg-blue-50 w-1/2 border border-blue-300 dark:border-blue-600 font-semibold p-4 text-blue-900 dark:text-blue-200 text-left uppercase"
+          ></thead>
+          <tbody
+            id="t-body"
+            class="border border-blue-300 dark:border-blue-700 p-4 bg-rgb-55-65-81"
+          ></tbody>
+        </table>
+        <p id="noDataMessage" class="hidden text-center">
+          No data available 
+        </p>
+      </div>
+    </div>
+
+    <script>
+      fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((json) => {
+          const products = json.products;
+          const input = document.getElementById("myInput");
+          const tableHead = document.getElementById("t-head");
+          const tableBody = document.getElementById("t-body");
+          const noDataMessage = document.getElementById("noDataMessage");
+
+          const headers = Object.keys(products[0])
+            .map((header) => `<th style="width:100px">${header}</th>`)
+            .join("");
+          tableHead.innerHTML = headers;
+
+          // Function to render products
+          const renderProducts = () => {
+            const searchText = input.value.trim().toLowerCase();
+            const filteredProducts = products.filter((product) =>
+              Object.values(product).some(
+                (value) =>
+                  typeof value === "string" &&
+                  value.toLowerCase().includes(searchText)
+              )
+            );
+
+            const rows = filteredProducts
+              .map((product) => {
+                return `<tr>
+                                <td>${product.id}</td>
+                                <td>${product.title}</td>
+                                <td>${product.description}</td>
+                                <td>${product.price}</td>
+                                <td>${product.discountPercentage}</td>
+                                <td>${product.rating}</td>
+                                <td>${product.stock}</td>
+                                <td>${product.brand}</td>
+                                <td>${product.category}</td>
+                                <td><img src="${product.thumbnail}" alt="${product.title}" style="width: 100px;"></td>
+                                <td><img src="${product.images}" alt="${product.title}" style="width:100px"></td>   
+                            </tr>`;
+              })
+              .join("");
+            tableBody.innerHTML = rows;
+
+            // Show or hide "No data available" message based on filtered products
+            noDataMessage.style.display =
+              filteredProducts.length === 0 ? "block" : "none";
+          };
+
+          renderProducts();
+
+          // Add event listener to the input field for filtering products
+          input.addEventListener("input", renderProducts);
+        });
+    </script>
+  </body>
+</html>
